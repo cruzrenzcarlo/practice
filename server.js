@@ -141,9 +141,9 @@ app.get('/', (req, res) => {
   sid: 300361745
   });
   quizes.insertMany([quizes1]);
-  res.send({
-    entry: quizes1,
-  });
+  // res.send({
+  //   entry: quizes1,
+  // });
 }); 
 
 app.listen(port, () => {
