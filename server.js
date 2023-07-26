@@ -143,7 +143,6 @@ app.get('/', (req, res) => {
   quizes.insertMany([quizes1]);
   res.send({
     entry: quizes1,
-    result
   });
 }); 
 
