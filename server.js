@@ -48,25 +48,25 @@ connection.once('open', () => {
 })
 
 // Define a Mongoose schema for the "records" collection
-const recordSchema = new mongoose.Schema({
+const quiz = new mongoose.Schema({
   name: String,
-  sid: String
+  sid: Number
 });
 
 // Create a Mongoose model for the "records" collection
-const Record = mongoose.model('Record', recordSchema);
+const quizes = mongoose.model('quizes', quiz);
 
 app.get('/', async (req, res) => {
-  const newRecord = {
+  const newQuizes = {
     name: "Renz Cruz",
-    sid: "1234"
+    sid: 300361745
   };
 
   try {
     // Insert the new record into the "records" collection using the Mongoose model
-    const result = await Record.create(newRecord);
+    const result = await quizes.create(newQuizes);
     res.send({
-      entry: newRecord,
+      entry: newQuizes,
       result
     });
   } catch (err) {
