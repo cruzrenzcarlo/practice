@@ -40,7 +40,7 @@ const mongoose = require('mongoose');
 const app = express();
 const port = 7000;
 
-const uri = "mongodb+srv://newuser01:12345@cluster0.7xf1ace.mongodb.net/test";
+const uri = "mongodb+srv://newuser01:12345@cluster0.7xf1ace.mongodb.net/Exam";
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 const connection = mongoose.connection;
 connection.once('open', () => {
