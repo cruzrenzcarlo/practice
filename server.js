@@ -136,7 +136,7 @@ const quizesSchema = new mongoose.Schema({
 
 const quizes = mongoose.model('Quizes', quizesSchema);
 app.get('/', (req, res) => {
-  const quizes1 = new quizesSchema({
+  const quizes1 = new quizes({
   name: "Renz Cruz",
   sid: 300361745
   });
