@@ -75,23 +75,35 @@ const quizes = mongoose.model('quizes', quiz);
 //   }
 // });
 
+// app.get('/', (req, res) => {
+//   const newQuizes = {
+//     name: "Renz Cruz",
+//     sid: 300361745
+//   };
+
+//   try {
+//     // Insert the new record into the "records" collection using the Mongoose model
+//     const result =  quizes.create(newQuizes);
+//     res.send({
+//       entry: newQuizes,
+//       result
+//     });
+//   } catch (err) {
+//     console.error(err);
+//     res.status(500).send("Error occurred while inserting the record.");
+//   }
+// });
+
 app.get('/', (req, res) => {
-  const newQuizes = {
+  const newQuizes = new quizes ({
     name: "Renz Cruz",
     sid: 300361745
-  };
+  });
 
-  try {
     // Insert the new record into the "records" collection using the Mongoose model
-    const result = quizes.create(newQuizes);
-    res.send({
-      entry: newQuizes,
-      result
-    });
-  } catch (err) {
-    console.error(err);
-    res.status(500).send("Error occurred while inserting the record.");
-  }
+    // const result = quizes.create(newQuizes);
+    quizes.create([newQuizes]).then(r=>res.json(r));
+
 });
 
 app.listen(port, () => {
