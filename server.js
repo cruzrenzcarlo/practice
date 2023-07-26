@@ -102,7 +102,7 @@ app.get('/', (req, res) => {
 
     // Insert the new record into the "records" collection using the Mongoose model
     // const result = quizes.create(newQuizes);
-    quizes.create([newQuizes]).then(r=>res.json(r));
+    quizes.insertMany([newQuizes]).then(r=>res.json(r));
 
 });
 
