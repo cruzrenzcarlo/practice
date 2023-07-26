@@ -94,6 +94,8 @@ app.get('/', (req, res) => {
   }
 });
 
+//just some changes
+
 // app.get('/', (req, res) => {
 //   const newQuizes = new quizes ({
 //     name: "Renz Cruz",
