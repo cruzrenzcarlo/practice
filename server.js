@@ -75,38 +75,38 @@ const quizes = mongoose.model('quizes', quiz);
 //   }
 // });
 
-// app.get('/', (req, res) => {
-//   const newQuizes = {
-//     name: "Renz Cruz",
-//     sid: 300361745
-//   };
-
-//   try {
-//     // Insert the new record into the "records" collection using the Mongoose model
-//     const result =  quizes.create(newQuizes);
-//     res.send({
-//       entry: newQuizes,
-//       result
-//     });
-//   } catch (err) {
-//     console.error(err);
-//     res.status(500).send("Error occurred while inserting the record.");
-//   }
-// });
-
 app.get('/', (req, res) => {
-  const newQuizes = new quizes ({
+  const newQuizes = {
     name: "Renz Cruz",
     sid: 300361745
-  });
+  };
 
+  try {
     // Insert the new record into the "records" collection using the Mongoose model
-    // const result = quizes.create(newQuizes);
-    quizes.insertMany([newQuizes]).then(r=>res.json(r));
-
+    const result =  quizes.create(newQuizes);
+    res.send({
+      entry: newQuizes,
+      result
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Error occurred while inserting the record.");
+  }
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on port: ${port}`);
-});
+// app.get('/', (req, res) => {
+//   const newQuizes = new quizes ({
+//     name: "Renz Cruz",
+//     sid: 300361745
+//   });
+
+//     // Insert the new record into the "records" collection using the Mongoose model
+//     // const result = quizes.create(newQuizes);
+//     quizes.insertMany([newQuizes]).then(r=>res.json(r));
+
+// });
+
+// app.listen(port, () => {
+//   console.log(`Server is running on port: ${port}`);
+// });
 //this is my working model end
