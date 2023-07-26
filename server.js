@@ -38,7 +38,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 
 const app = express();
-const port = process.env.PORT || 7000;
+const port = 7000;
 
 const uri = "mongodb+srv://newuser01:12345@cluster0.7xf1ace.mongodb.net/test";
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
